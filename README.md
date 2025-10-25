@@ -87,4 +87,4 @@ Our emails are:
  - C21381381@mytudublin.ie
  - C21415142@mytudublin.ie
 
-![TUD Logo](images/TUD Logo High Def.webp)
+![TUD Logo](images/TUD%20Logo%20High%20Def.webp)
