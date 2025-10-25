@@ -16,12 +16,13 @@
 - [Features](#features)
   - [Life of a Plant](#life-of-a-plant)
   - [Mentor](#mentor)
-  - [Explaining items of interest](#explaining-items-of-interest)
-    - [Soil](#soil)
-    - [Weather classes](#weather-classes)
-    - [Plant Growth + Score](#plant-growth--score)
-    - [Emissions](#emissions)
-    - [Economy](#economy)
+  - [Explaining items of interest](#3-explaining-items-of-interest)
+  - [Soil](#31-soil)
+  - [Weather classes](#32-weather-classes)
+  - [Plant Growth + Score](#33-plant-growth--score)
+  - [Emissions](#34-emissions)
+  - [Economy](#35-economy)
+- [Contact Us](#contact-us)
 
 # Summary
 
@@ -79,3 +80,11 @@ Could help put into perspective the greenhouse effect.
 ### 3.5 Economy
 Show costs of **seed**, **fertiliser**, **tools**, etc, and the revenue generated. 
 We could also show legal issues and other dangers that farmers face which could help put a lot of this into perspective.
+
+# Contact us
+
+Our emails are:
+ - C21381381@mytudublin.ie
+ - C21415142@mytudublin.ie
+
+![TUD Logo](images/TUD Logo High Def.webp)
