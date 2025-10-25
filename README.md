@@ -23,8 +23,39 @@ Welcome to the Metaverse
 - [Class discord](https://discord.gg/tB7F77ZsZe)
 - [Godot Gaedhleach]
 
-## Week 3
-- Clone this repo and open each of the scenes
+## Week 5 - Quest:SDG
+- [Physics](physics.pdf)
+- [Quest:SDG](sdg_presentation.pdf)
+
+## Lab
+Clone the xr vendors plugin repo to get the room scanning code
+Get the spaceship from Quest:SDK flying around the room and avoiding the walls and tables
+
+## Week 4 - XR Projects
+- [XR Sequencer](xr_sequencer_presentation.pdf)
+- [Tweens](tweens.pdf)
+- XR Toolkit
+- Pop
+- [Hand tracking & Gestures]
+
+## Lab
+
+Modify the Step sequencer example to use a MultiMesh3D - it will be much more performant
+
+Create a passthrough XR project
+Use CSG to make the players hand into a shootable gun
+Play a sound when the player shoots
+Make some obstacles using rigidbodies for the player to shoot
+
+## Lab Create 
+
+## Week 3 - Vector Operations
+- [Tank Game 3D Slides](tank_shooting_presentation.pdf)
+
+
+## Lab 
+
+Use VehicleBody3D and create an XR project, where you control a small car. Create the tower and wall and drive the car to crash into them
 
 ## Week 2
 - [Slides](godot_3d_slides.pdf)
