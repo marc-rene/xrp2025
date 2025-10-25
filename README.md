@@ -1,83 +1,81 @@
-# TU856/TU857/TU858/TU984 Games Engines 1/XR Prototyping 2025
+![Claksons Farm Logo](images/ChatGPT_ClarksonsFarmXR_Logo.png)
 
-[What is Games Engines?](https://bryanduggan.org/2024/09/05/what-is-games-engines/)
+# **CA PROPOSAL**: SDGS #15 – LIFE ON LAND
 
-```
-Welcome to the Metaverse
-```
+## “A Clarkson’s Farms Experience”
 
-![](holo.jpg)
+ - By C21381381 – **Eduard Dravnieks**
+ - By C21415142 – **César Hannin**
 
-## Assessment
-- [50% Assignment](assignment.md)
-- 50% Exam 
+> XR – Prototyping CMPU4030
+> October 2025
 
-# Resources
-- [CSResources git repo](https://github.com/skooter500/csresources/blob/main/git_ref.pdf). Here you will find links to the previous courses and all my quick references
-- [Git for poets](https://www.youtube.com/watch?v=BCQHnlnPusY)
-- [Godot for beginners](https://www.youtube.com/watch?v=LOhfqjmasi0)
-- [GDScript Tutorial](https://www.youtube.com/watch?v=e1zJS31tr88)
-- [5 Games Made in Godot to inspire you each week](https://www.youtube.com/@stayathomedev) 
-- [Game dev news channel](https://www.youtube.com/@gamefromscratch)
-- [Godot discord](https://discord.com/invite/godotengine)
-- [Class discord](https://discord.gg/tB7F77ZsZe)
-- [Godot Gaedhleach]
+#### Table of Contents
 
-## Week 5 - Quest:SDG
-- [Physics](physics.pdf)
-- [Quest:SDG](sdg_presentation.pdf)
+- [Summary](#summary)
+- [Features](#features)
+  - [Life of a Plant](#life-of-a-plant)
+  - [Mentor](#mentor)
+  - [Explaining items of interest](#explaining-items-of-interest)
+    - [Soil](#soil)
+    - [Weather classes](#weather-classes)
+    - [Plant Growth + Score](#plant-growth--score)
+    - [Emissions](#emissions)
+    - [Economy](#economy)
 
-## Lab
-Clone the xr vendors plugin repo to get the room scanning code
-Get the spaceship from Quest:SDK flying around the room and avoiding the walls and tables
+# Summary
 
-## Week 4 - XR Projects
-- [XR Sequencer](xr_sequencer_presentation.pdf)
-- [Tweens](tweens.pdf)
-- XR Toolkit
-- Pop
-- [Hand tracking & Gestures]
+While watching Jeremy Clarkson on his hit TV show *“Clarkson’s Farms”*, you have several different aspects of farming shown and explained to you while still being entertaining, aspects which I think most people would never have thought about, such as the financial aspects, the impact of unpredictable weather, and even legal processes that farmers have to contend with. 
 
-## Lab
+We propose a **“Hands-on XR farming simulator”** where players learn soil basics, weather impacts, biodiversity, Animal caretaking, and sustainable practices. It’s hoped that the experience will resemble being on an interactive episode of Clarkson’s farm, where users learn the basics about how to be a farmer and hopefully inspire them to pursue it as a career path, as more farmers are needed in todays’ age, and it’s something that isn’t talked about or glamorised as much as it should be!
 
-Modify the Step sequencer example to use a MultiMesh3D - it will be much more performant
-
-Create a passthrough XR project
-Use CSG to make the players hand into a shootable gun
-Play a sound when the player shoots
-Make some obstacles using rigidbodies for the player to shoot
-
-## Lab Create 
-
-## Week 3 - Vector Operations
-- [Tank Game 3D Slides](tank_shooting_presentation.pdf)
+![Clarkson Farm Logo](images/Clarkson%20Farm.webp)
 
 
-## Lab 
+# Features
 
-Use VehicleBody3D and create an XR project, where you control a small car. Create the tower and wall and drive the car to crash into them
+ ## 1. Life of a Plant
+The player will choose a seed *(melon seed for example)*, they’ll choose what type of soil to plant it in, and after it’s been planted time will speed up, and the player could see how the weather has impacted its development over this time, all the while the player will see it grow right in front of them. 
+The player will have to do actions like: 
 
-## Week 2
-- [Slides](godot_3d_slides.pdf)
-- [Setup Godot Android Export](https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html)
+ - ploughing the bed
+ - watering
+ - manually pulling up and inspecting the crop
+ 
+ And more!
 
-Clone these repos to see how to create a Godot XR passthrough project
+Players will also have the option to just simply watch the plant grow right in front of them *(sped up)*. 
+We will have examples of where the user can find some of these plants in real life so that they may see and feel them in person. 
+For the scope and purposes of this project, we will focus on the TUD – Grangegorman garden and flora and the plants that can be found there.
 
-- [Quest SDG](https://github.com/skooter500/questsdg)
-- [IT2](https://github.com/skooter500/it2)
+![Quick Diagram Plant Life Cycle](images/Quick_Diagram_Plant_LifeCycle.png)
 
-Create a new project and get passthrough working
+## 2. Mentor
+There will be a hologram who will talk with the user, explaining different concepts, maybe something that requires a bit of explanation, all with accompanying subtitles. 
+It would be nice if we could Jermy Clarkson’s likeness as this **“mentor”** NPC and have his voice explaining and guiding the player.
 
-Use [Hunyan 3d](https://hunyuan-3d.com/) to create some 3D models and import them into your XR project
+![Quick Diagram Tutor](images/Quick_Diagram_Tutor.png)
 
-Take screenshots and upload them to [discord](https://discord.gg/tB7F77ZsZe)
+## 3. Explaining items of interest
 
+Farming involves knowledge and consideration for several different aspects of the process. It is belief that they’re all equally important and require to be mentioned.
 
-## Week 1
+### 3.1 Soil
+Different Soil classes with different **textures** *(sand/silt/clay)*, **pH**, **SOM**, **density**, all of which could affect available **water**, **nutrient mobility**, and other aspects.
 
-### Lab
+### 3.2 Weather Classes
+**Temperature**, **rain**, **wind**, **radiation**, or events like **frost**, **heatwave**, **storms** could all have impact on the soil.
 
-Clone these repos and explore:
+### 3.3 Plant Growth + Score
+Affected by **heat**, **water stress**, and **nutrients**. Will also have different growth stages and yields. 
+A score can also be assigned here to the player depending on how they looked after this crop. 
+Like the game [Cooking Mama](https://en.wikipedia.org/wiki/Cooking_Mama) but for farming.
 
-- [https://github.com/skooter500/GE1-2024](https://github.com/skooter500/GE1-2024)
-- [https://github.com/skooter500/questsdg](https://github.com/skooter500/questsdg)
+### 3.4 Emissions
+Could show **fuel** and **resources** used and required in relation to yield. 
+Maybe show what it’s like in different countries with at different stages of development. 
+Could help put into perspective the greenhouse effect.
+
+### 3.5 Economy
+Show costs of **seed**, **fertiliser**, **tools**, etc, and the revenue generated. 
+We could also show legal issues and other dangers that farmers face which could help put a lot of this into perspective.
