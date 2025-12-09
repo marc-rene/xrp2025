@@ -13,9 +13,13 @@ offset_right = -0.3840332
 offset_bottom = 0.06384277
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
-layout_mode = 0
-offset_right = 1200.0
-offset_bottom = 1738.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.151
+offset_bottom = -0.43798828
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
 layout_mode = 2
@@ -28,6 +32,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -19.0
+offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -51,3 +57,11 @@ theme_override_font_sizes/font_size = 144
 text = "Yukon Gold"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Extra Text" type="Label" parent="Control/MarginContainer/Button/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "[TODO: Add details]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
