@@ -44,3 +44,5 @@ laser_length = 1
 show_target = true
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_jcx8g")]
+
+[node name="UI_AudioPlayer" type="AudioStreamPlayer" parent="."]

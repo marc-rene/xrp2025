@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://m5nvts2fhpsu"]
+
+[ext_resource type="Texture2D" uid="uid://d12alwxacqx3p" path="res://Art/Seeds/Potatoes/T_Potatoe.png" id="1_srfuf"]
+
+[node name="UiSeedPotatoe" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchor_right = 1.042
+anchor_bottom = 2.6820002
+offset_right = -0.3840332
+offset_bottom = 0.06384277
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 1738.0
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="Control/MarginContainer/Button/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_srfuf")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="Control/MarginContainer/Button/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 188
+text = "Potatoes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Control/MarginContainer/Button/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7708395, 0.77083945, 0.77083945, 1)
+theme_override_font_sizes/font_size = 144
+text = "Yukon Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
