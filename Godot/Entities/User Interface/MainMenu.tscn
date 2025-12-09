@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cecuqbk50fep6"]
+
+[ext_resource type="Script" uid="uid://kdgexuph0pnh" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.gd" id="1_m0hh4"]
+[ext_resource type="PackedScene" uid="uid://dcqjhbpdqu44x" path="res://Entities/User Interface/UI_MainMenu.tscn" id="2_71sdb"]
+
+[node name="MainMenu" type="Node3D"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+script = ExtResource("1_m0hh4")
+screen_size = Vector2(1920, 1080)
+scene = ExtResource("2_71sdb")
+viewport_size = Vector2(1920, 1080)
+alpha_scissor_threshold = 0.25
+unshaded = false
+filter = true
+scene_properties_keys = PackedStringArray()
+metadata/_custom_type_script = "uid://kdgexuph0pnh"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://gaaoao5ohco8"]
+[gd_scene load_steps=9 format=3 uid="uid://gaaoao5ohco8"]
 
 [ext_resource type="Material" uid="uid://clt76no5pbesi" path="res://Art/Basic/Basic_Grey.tres" id="1_gdhvk"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_02wq5"]
+[ext_resource type="PackedScene" uid="uid://cecuqbk50fep6" path="res://Entities/User Interface/MainMenu.tscn" id="2_inw3b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02wq5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -40,5 +41,8 @@ shape = SubResource("BoxShape3D_it3rv")
 material_override = ExtResource("1_gdhvk")
 mesh = SubResource("BoxMesh_hc72w")
 
-[node name="XROrigin3D" parent="." instance=ExtResource("2_02wq5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+[node name="MainMenu" parent="StaticBody3D" instance=ExtResource("2_inw3b")]
+transform = Transform3D(0.001, 0, 0, 0, 0.099999994, 0, 0, 0, 0.001, 0.05066936, 5, -0.06820353)
+
+[node name="Player" parent="." instance=ExtResource("2_02wq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20536762, 0, 0.4673879)
