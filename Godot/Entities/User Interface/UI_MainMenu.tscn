@@ -1,25 +1,51 @@
-[gd_scene format=3 uid="uid://dcqjhbpdqu44x"]
+[gd_scene load_steps=3 format=3 uid="uid://dcqjhbpdqu44x"]
+
+[ext_resource type="Script" uid="uid://c30d2h3kh5kne" path="res://Entities/User Interface/GD_MainMenu.gd" id="1_65y4d"]
+[ext_resource type="Texture2D" uid="uid://b1osim0rwleun" path="res://Art/T_ClarksonsFarmXR_Logo.png" id="2_r383f"]
 
 [node name="UiMainMenu" type="CanvasLayer"]
+follow_viewport_enabled = true
+script = ExtResource("1_65y4d")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 1.064
+anchor_bottom = 2.6820002
+offset_right = -25.728027
+offset_bottom = 0.06384277
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+custom_minimum_size = Vector2(1.28, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1200.0
+offset_bottom = 1738.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
+texture_repeat = 1
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_r383f")
+
+[node name="btn_Start" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 188
+text = "Start"
+
+[node name="btn_Exit" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 188
+text = "Exit"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/btn_Exit" to="." method="_on_btn_exit_pressed"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://gaaoao5ohco8"]
+[gd_scene load_steps=8 format=3 uid="uid://gaaoao5ohco8"]
 
-[ext_resource type="Material" uid="uid://clt76no5pbesi" path="res://Art/Basic/Basic_Grey.tres" id="1_gdhvk"]
 [ext_resource type="Script" uid="uid://ch7rdl101s4pr" path="res://Common/XR_Level.gd" id="1_inw3b"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_02wq5"]
+[ext_resource type="PackedScene" uid="uid://dcqjhbpdqu44x" path="res://Entities/User Interface/UI_MainMenu.tscn" id="6_hc72w"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_5u1is"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02wq5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,10 +18,6 @@ sky = SubResource("Sky_inw3b")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_it3rv"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_hc72w"]
-
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_inw3b")
 
@@ -31,15 +28,12 @@ environment = SubResource("Environment_g3f4u")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, -0.5, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_it3rv")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = ExtResource("1_gdhvk")
-mesh = SubResource("BoxMesh_hc72w")
-
 [node name="Player" parent="." instance=ExtResource("2_02wq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20536762, 0, 0.4673879)
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("7_5u1is")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.4, -1)
+screen_size = Vector2(12, 17.38)
+scene = ExtResource("6_hc72w")
+viewport_size = Vector2(1200, 1738)
+scene_properties_keys = PackedStringArray("GD_MainMenu.gd")

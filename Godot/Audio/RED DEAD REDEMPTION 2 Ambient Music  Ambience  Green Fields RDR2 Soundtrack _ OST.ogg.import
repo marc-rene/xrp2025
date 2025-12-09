@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c3l71yw71eotk"
+path="res://.godot/imported/RED DEAD REDEMPTION 2 Ambient Music  Ambience  Green Fields RDR2 Soundtrack _ OST.ogg-119e436947f7a5d7256c39de68ccdcb4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/RED DEAD REDEMPTION 2 Ambient Music  Ambience  Green Fields RDR2 Soundtrack _ OST.ogg"
+dest_files=["res://.godot/imported/RED DEAD REDEMPTION 2 Ambient Music  Ambience  Green Fields RDR2 Soundtrack _ OST.ogg-119e436947f7a5d7256c39de68ccdcb4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

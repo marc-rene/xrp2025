@@ -12,6 +12,9 @@
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 
+[node name="AudioListener3D" type="AudioListener3D" parent="XRCamera3D"]
+current = true
+
 [node name="XR_Controller_LeftHand" type="XRController3D" parent="."]
 tracker = &"left_hand"
 
