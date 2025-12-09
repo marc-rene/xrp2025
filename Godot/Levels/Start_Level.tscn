@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://gaaoao5ohco8"]
+[gd_scene load_steps=14 format=3 uid="uid://gaaoao5ohco8"]
 
 [ext_resource type="Script" uid="uid://ch7rdl101s4pr" path="res://Common/XR_Level.gd" id="1_inw3b"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_02wq5"]
 [ext_resource type="Script" uid="uid://bm5nypmptll1s" path="res://Entities/User Interface/Seeds/GD_SeedSelection.gd" id="5_5u1is"]
+[ext_resource type="AudioStream" uid="uid://bwfun7bx4tu8x" path="res://Audio/good-game.ogg" id="5_f70te"]
 [ext_resource type="PackedScene" uid="uid://m5nvts2fhpsu" path="res://Entities/User Interface/Seeds/UI_Seed_Potatoe.tscn" id="5_hc72w"]
 [ext_resource type="AudioStream" uid="uid://c3l71yw71eotk" path="res://Audio/RED DEAD REDEMPTION 2 Ambient Music  Ambience  Green Fields RDR2 Soundtrack _ OST.ogg" id="5_it3rv"]
 [ext_resource type="PackedScene" uid="uid://dcqjhbpdqu44x" path="res://Entities/User Interface/UI_MainMenu.tscn" id="6_hc72w"]
@@ -22,6 +23,9 @@ sky = SubResource("Sky_inw3b")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4unty"]
+size = Vector3(50, 0.1, 50)
+
 [node name="MainMenu" type="Node3D"]
 script = ExtResource("1_inw3b")
 
@@ -35,13 +39,15 @@ shadow_enabled = true
 [node name="Player" parent="." instance=ExtResource("2_02wq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20536762, 0, 0.4673879)
 
-[node name="Main Menu" parent="." node_paths=PackedStringArray("UI_AudioStreamPlayer_ref") instance=ExtResource("7_5u1is")]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.4, -1)
+[node name="Main Menu" parent="." node_paths=PackedStringArray("UI_AudioStreamPlayer_ref", "world_environment") instance=ExtResource("7_5u1is")]
+transform = Transform3D(0.075, 0, -2.7939677e-09, 0, 0.07500001, -1.8626451e-09, -9.313226e-10, 0, 0.075, -5.9604645e-08, 1.4000001, -1)
 screen_size = Vector2(12, 17.38)
 scene = ExtResource("6_hc72w")
 viewport_size = Vector2(1200, 1738)
-scene_properties_keys = PackedStringArray("GD_MainMenu.gd", "UI_AudioStreamPlayer_ref")
+scene_properties_keys = PackedStringArray("GD_MainMenu.gd", "UI_AudioStreamPlayer_ref", "world_environment", "exit_sound")
 UI_AudioStreamPlayer_ref = NodePath("../Player/UI_AudioPlayer")
+world_environment = NodePath("../WorldEnvironment")
+exit_sound = ExtResource("5_f70te")
 
 [node name="All Seeds" type="Node3D" parent="." node_paths=PackedStringArray("StartMenu_ref")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.4, -1.263623)
@@ -67,5 +73,11 @@ stream = ExtResource("5_it3rv")
 attenuation_model = 3
 autoplay = true
 bus = &"Music"
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_4unty")
 
 [editable path="Player"]
