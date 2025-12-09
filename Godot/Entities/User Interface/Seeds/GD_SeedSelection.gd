@@ -4,6 +4,8 @@ extends Node3D
 
 func _ready() -> void:
     StartMenu_ref.SIGNAL_Start.connect(_on_start_select)
+    visible = false
     
 func _on_start_select():
+    visible = true
     print("GREAT SIGNAL SUCCESS!!!")
