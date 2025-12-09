@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://gaaoao5ohco8"]
+[gd_scene load_steps=9 format=3 uid="uid://gaaoao5ohco8"]
 
 [ext_resource type="Material" uid="uid://clt76no5pbesi" path="res://Art/Basic/Basic_Grey.tres" id="1_gdhvk"]
+[ext_resource type="Script" uid="uid://ch7rdl101s4pr" path="res://Common/XR_Level.gd" id="1_inw3b"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_02wq5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02wq5"]
@@ -20,7 +21,8 @@ glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_hc72w"]
 
-[node name="Node3D" type="Node3D"]
+[node name="MainMenu" type="Node3D"]
+script = ExtResource("1_inw3b")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g3f4u")
