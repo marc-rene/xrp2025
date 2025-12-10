@@ -20,3 +20,5 @@ func _on_btn_exit_pressed() -> void:
 
 func _on_btn_start_pressed() -> void:
     $"../../../All Seeds"._on_start_select()
+    
+    

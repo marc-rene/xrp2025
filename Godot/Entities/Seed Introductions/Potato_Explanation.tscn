@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://b41at3yh1kb2p"]
+[gd_scene load_steps=3 format=3 uid="uid://b41at3yh1kb2p"]
 
 [ext_resource type="VideoStream" uid="uid://86tbypeldjwg" path="res://Art/Seeds/Potatoes/Sprouting-Potatoes-Garden-Quickie-Episode-10_1.ogv" id="1_gilej"]
+[ext_resource type="Script" uid="uid://b5a1uepjr26vy" path="res://Common/GD_Video_Item.gd" id="1_jdpr6"]
 
 [node name="PotatoExplanation" type="CanvasLayer"]
+script = ExtResource("1_jdpr6")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(640, 360)
@@ -13,8 +15,11 @@ offset_right = -0.51208496
 offset_bottom = -0.2880249
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(640, 360)
 layout_mode = 2
 ratio = 1.7778
 

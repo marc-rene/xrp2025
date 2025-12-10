@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://m5nvts2fhpsu"]
+[gd_scene load_steps=3 format=3 uid="uid://m5nvts2fhpsu"]
 
 [ext_resource type="Script" uid="uid://bbvchvufckhqm" path="res://Entities/User Interface/Seeds/GD_Seed_Item.gd" id="1_ln0p1"]
 [ext_resource type="Texture2D" uid="uid://d12alwxacqx3p" path="res://Art/Seeds/Potatoes/T_Potatoe.png" id="1_srfuf"]
-[ext_resource type="PackedScene" uid="uid://b41at3yh1kb2p" path="res://Entities/Seed Introductions/Potato_Explanation.tscn" id="3_kqnbm"]
 
 [node name="UiSeedPotatoe" type="CanvasLayer" node_paths=PackedStringArray("Video_Ref")]
 follow_viewport_enabled = true
 script = ExtResource("1_ln0p1")
-Video_Ref = NodePath("Control/HBoxContainer/PotatoExplanation/MarginContainer/AspectRatioContainer/VideoStreamPlayer")
+Video_Ref = NodePath("")
+seed_name = "POTATO"
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -75,8 +75,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="PotatoExplanation" parent="Control/HBoxContainer" instance=ExtResource("3_kqnbm")]
-
 [connection signal="pressed" from="Control/HBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
-
-[editable path="Control/HBoxContainer/PotatoExplanation"]
