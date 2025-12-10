@@ -14,7 +14,6 @@ func _on_btn_exit_pressed() -> void:
     if world_environment == null:
         world_environment = $"../../../WorldEnvironment"
     tween.tween_property(world_environment.environment , "background_energy_multiplier", 0.0, 2.0)
-  
     await get_tree().create_timer(3).timeout
     get_tree().quit(0)
 

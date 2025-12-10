@@ -54,13 +54,12 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.4, -1.263623)
 script = ExtResource("5_5u1is")
 StartMenu_ref = NodePath("../Main Menu")
 
-[node name="Potato seed" parent="All Seeds" node_paths=PackedStringArray("Video_Ref") instance=ExtResource("7_5u1is")]
+[node name="Potato seed" parent="All Seeds" instance=ExtResource("7_5u1is")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 screen_size = Vector2(12, 17.38)
 scene = ExtResource("5_hc72w")
 viewport_size = Vector2(1200, 2000)
 scene_properties_keys = PackedStringArray("GD_Seed_Item.gd", "Video_Ref")
-Video_Ref = NodePath("Viewport/UiSeedPotatoe/Control/HBoxContainer/PotatoExplanation/MarginContainer/AspectRatioContainer/VideoStreamPlayer")
 
 [node name="Wheat seed" parent="All Seeds" instance=ExtResource("7_5u1is")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
