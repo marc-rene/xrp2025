@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gaaoao5ohco8"]
+[gd_scene load_steps=16 format=3 uid="uid://gaaoao5ohco8"]
 
 [ext_resource type="Script" uid="uid://ch7rdl101s4pr" path="res://Common/XR_Level.gd" id="1_inw3b"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_02wq5"]
@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://b4xdxcso0r6v5" path="res://Entities/User Interface/Seeds/UI_Seed_Wheat.tscn" id="7_4unty"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_5u1is"]
 [ext_resource type="AudioStream" uid="uid://bh84m7ni3wxj8" path="res://Audio/Red-Dead-Redemption-2-Official-Soundtrack-House-Building-Theme.ogg" id="9_f70te"]
-[ext_resource type="PackedScene" uid="uid://r0ud0kxt16ll" path="res://Entities/Seed Introductions/Video_Player_3D.tscn" id="9_ftg3g"]
+[ext_resource type="PackedScene" uid="uid://r0ud0kxt16ll" path="res://Entities/User Interface/Video_Player_3D.tscn" id="9_ftg3g"]
+[ext_resource type="PackedScene" uid="uid://dla4bu28fo0a4" path="res://Entities/Seed Introductions/VIDEOUI_Wheat_Explanation.tscn" id="10_12rl8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02wq5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -65,7 +66,7 @@ Video_Ref = NodePath("../Potato Video")
 seed_name = "POTATO"
 
 [node name="Potato Video" parent="All Seeds" instance=ExtResource("9_ftg3g")]
-transform = Transform3D(5, 0, 0, 0, 4.947931, -0.7197085, 0, 0.7197085, 4.947931, -12.032771, 13.457806, 1.7340145)
+transform = Transform3D(8.683027, 0.7140008, 4.908691, 2.7755576e-15, 9.895864, -1.4394175, -4.9603477, 1.24985, 8.592605, -28.24177, 7.9408607, 7.8281)
 
 [node name="Wheat seed" parent="All Seeds" node_paths=PackedStringArray("Video_Ref") instance=ExtResource("7_5u1is")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
@@ -73,15 +74,17 @@ screen_size = Vector2(12, 17.38)
 scene = ExtResource("7_4unty")
 viewport_size = Vector2(1200, 2000)
 scene_properties_keys = PackedStringArray("GD_Seed_Item.gd", "Video_Ref", "seed_name")
-Video_Ref = NodePath("../Potato Video")
+Video_Ref = NodePath("../Wheat Video")
 seed_name = "WHEAT"
 
 [node name="Wheat Video" parent="All Seeds" instance=ExtResource("9_ftg3g")]
-transform = Transform3D(1, 0, 0, 0, 0.9895862, -0.1439417, 0, 0.1439417, 0.9895862, 8.813781, 13.457806, 1.7340145)
+transform = Transform3D(8.257735, -0.8118338, -5.5812836, 0, 9.895862, -1.439417, 5.640018, 1.1886325, 8.171741, 29.662819, 9.279213, 7.3273144)
+CanvasLayerToUse = ExtResource("10_12rl8")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018066764, 2.2786894, -0.7790913)
 stream = ExtResource("9_f70te")
+volume_db = -5.0
 autoplay = true
 bus = &"Music"
 

@@ -1,7 +1,8 @@
 extends Node3D
 
-@export var Video_Placeholder_ref : XRToolsViewport2DIn3D
 @export var CanvasLayerToUse : Resource
 
-func _play_included_video_():
-    Video_Placeholder_ref._play_the_video_()
+func _play_the_video_():
+    $Viewport2Din3D.scene = CanvasLayerToUse
+    #$Viewport2Din3D.scene._play_the_video_() # This crashes... WHY?
+    

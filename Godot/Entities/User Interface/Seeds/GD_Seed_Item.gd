@@ -12,13 +12,13 @@ func _on_button_pressed() -> void:
             if seed_name == "POTATO":
                 Video_Ref = $"../../../Potato Video"
             else:
-                Video_Ref = $"../../../Wheat seed"
+                Video_Ref = $"../../../Wheat Video"
         if Video_Ref != null:
             if seed_name == "POTATO":
-                Video_Ref._play_included_video_()
+                Video_Ref._play_the_video_()
                 print("Playing vid")
             else:
-                Video_Ref._play_included_video_()
+                Video_Ref._play_the_video_()
                 
         else:
             print("ERROR: Video reference is null")

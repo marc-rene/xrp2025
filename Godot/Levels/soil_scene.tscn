@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvrndk5lmvxwu"]
+[gd_scene load_steps=7 format=3 uid="uid://bvrndk5lmvxwu"]
 
 [ext_resource type="Script" uid="uid://der6h4vpuqymc" path="res://Common/soil_scene.gd" id="1_be8oc"]
 [ext_resource type="Shader" uid="uid://dy8ung0rdbhqv" path="res://Levels/Shadermaterial.gdshader" id="2_be8oc"]
+[ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="3_ot30q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ot30q"]
 render_priority = 0
@@ -25,10 +26,6 @@ script = ExtResource("1_be8oc")
 transform = Transform3D(-0.5239859, -0.26743582, 0.8086512, 0, 0.94942546, 0.31399244, -0.8517269, 0.16452762, -0.49748558, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 1.2349243, 5)
-fov = 105.4
-
 [node name="SoilMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_dhhtr")
 
@@ -36,3 +33,17 @@ mesh = SubResource("PlaneMesh_dhhtr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Soilcollison"]
 shape = SubResource("BoxShape3D_be8oc")
+
+[node name="Player" parent="." instance=ExtResource("3_ot30q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014804006, 0.6254506, -0.326935)
+
+[node name="FunctionPointer Right" parent="Player/XR_Controller_LeftHand" index="3"]
+show_laser = 0
+
+[node name="BackupCamera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.7116583, 0.7025258, 0, -0.7025258, 0.7116583, 0, 1.5974822, 0.8497872)
+
+[connection signal="button_pressed" from="Player/XR_Controller_LeftHand" to="." method="_on_xr_controller_left_hand_button_pressed"]
+[connection signal="button_pressed" from="Player/XR_Controller_RightHand" to="." method="_on_xr_controller_right_hand_button_pressed"]
+
+[editable path="Player"]
