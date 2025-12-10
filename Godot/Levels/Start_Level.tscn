@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ch7rdl101s4pr" path="res://Common/XR_Level.gd" id="1_inw3b"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_02wq5"]
-[ext_resource type="Script" uid="uid://bm5nypmptll1s" path="res://Entities/User Interface/Seeds/GD_SeedSelection.gd" id="5_5u1is"]
+[ext_resource type="Script" uid="uid://bm5nypmptll1s" path="res://Entities/User Interface/Seeds/GD_SeedSelection_Menu.gd" id="5_5u1is"]
 [ext_resource type="AudioStream" uid="uid://bwfun7bx4tu8x" path="res://Audio/good-game.ogg" id="5_f70te"]
 [ext_resource type="PackedScene" uid="uid://m5nvts2fhpsu" path="res://Entities/User Interface/Seeds/UI_Seed_Potatoe.tscn" id="5_hc72w"]
-[ext_resource type="AudioStream" uid="uid://c3l71yw71eotk" path="res://Audio/RED DEAD REDEMPTION 2 Ambient Music  Ambience  Green Fields RDR2 Soundtrack _ OST.ogg" id="5_it3rv"]
 [ext_resource type="PackedScene" uid="uid://dcqjhbpdqu44x" path="res://Entities/User Interface/UI_MainMenu.tscn" id="6_hc72w"]
 [ext_resource type="PackedScene" uid="uid://b4xdxcso0r6v5" path="res://Entities/User Interface/Seeds/UI_Seed_Wheat.tscn" id="7_4unty"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_5u1is"]
+[ext_resource type="AudioStream" uid="uid://bh84m7ni3wxj8" path="res://Audio/Red-Dead-Redemption-2-Official-Soundtrack-House-Building-Theme.ogg" id="9_f70te"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_02wq5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -40,7 +40,7 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20536762, 0, 0.4673879)
 
 [node name="Main Menu" parent="." node_paths=PackedStringArray("UI_AudioStreamPlayer_ref", "world_environment") instance=ExtResource("7_5u1is")]
-transform = Transform3D(0.075, 0, -2.7939677e-09, 0, 0.07500001, -1.8626451e-09, -9.313226e-10, 0, 0.075, -5.9604645e-08, 1.4000001, -1)
+transform = Transform3D(0.075, 0, -2.7939677e-09, 0, 0.07500001, -1.8626451e-09, -9.313226e-10, 0, 0.075, -5.9604645e-08, 1.4000001, -0.9423543)
 screen_size = Vector2(12, 17.38)
 scene = ExtResource("6_hc72w")
 viewport_size = Vector2(1200, 1738)
@@ -54,23 +54,24 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.4, -1.263623)
 script = ExtResource("5_5u1is")
 StartMenu_ref = NodePath("../Main Menu")
 
-[node name="Potato seed" parent="All Seeds" instance=ExtResource("7_5u1is")]
+[node name="Potato seed" parent="All Seeds" node_paths=PackedStringArray("Video_Ref") instance=ExtResource("7_5u1is")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 screen_size = Vector2(12, 17.38)
 scene = ExtResource("5_hc72w")
 viewport_size = Vector2(1200, 2000)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("GD_Seed_Item.gd", "Video_Ref")
+Video_Ref = NodePath("Viewport/UiSeedPotatoe/Control/HBoxContainer/PotatoExplanation/MarginContainer/AspectRatioContainer/VideoStreamPlayer")
 
 [node name="Wheat seed" parent="All Seeds" instance=ExtResource("7_5u1is")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.971, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 screen_size = Vector2(12, 17.38)
 scene = ExtResource("7_4unty")
 viewport_size = Vector2(1200, 2000)
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("GD_Seed_Item.gd", "Video_Ref")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018066764, 1.6338326, -0.7477495)
-stream = ExtResource("5_it3rv")
-attenuation_model = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0018066764, 2.2786894, -0.7790913)
+stream = ExtResource("9_f70te")
 autoplay = true
 bus = &"Music"
 

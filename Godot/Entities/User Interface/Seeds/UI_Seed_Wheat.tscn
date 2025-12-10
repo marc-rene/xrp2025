@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4xdxcso0r6v5"]
+[gd_scene load_steps=3 format=3 uid="uid://b4xdxcso0r6v5"]
 
-[ext_resource type="Texture2D" uid="uid://b6v3uel8t6rxh" path="res://Art/Seeds/Potatoes/T_Wheat.png" id="1_17uhd"]
+[ext_resource type="Script" uid="uid://bbvchvufckhqm" path="res://Entities/User Interface/Seeds/GD_Seed_Item.gd" id="1_2inyf"]
+[ext_resource type="Texture2D" uid="uid://b6v3uel8t6rxh" path="res://Art/Seeds/Wheat/T_Wheat.png" id="1_17uhd"]
 
 [node name="UiSeedPotatoe" type="CanvasLayer"]
 follow_viewport_enabled = true
+script = ExtResource("1_2inyf")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -12,7 +14,7 @@ anchor_bottom = 2.6820002
 offset_right = -0.3840332
 offset_bottom = 0.06384277
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -20,14 +22,19 @@ anchor_bottom = 1.151
 offset_bottom = -0.43798828
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/HBoxContainer"]
+custom_minimum_size = Vector2(1200, 2000)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="Control/HBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/Button"]
+[node name="Button" type="Button" parent="Control/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer/MarginContainer/Button"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,13 +43,13 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Icon" type="TextureRect" parent="Control/MarginContainer/Button/VBoxContainer"]
+[node name="Icon" type="TextureRect" parent="Control/HBoxContainer/MarginContainer/Button/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_17uhd")
 expand_mode = 4
 stretch_mode = 4
 
-[node name="Title" type="Label" parent="Control/MarginContainer/Button/VBoxContainer"]
+[node name="Title" type="Label" parent="Control/HBoxContainer/MarginContainer/Button/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 188
 text = "Wheat"
@@ -50,7 +57,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Subtitle" type="Label" parent="Control/MarginContainer/Button/VBoxContainer"]
+[node name="Subtitle" type="Label" parent="Control/HBoxContainer/MarginContainer/Button/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.7708395, 0.77083945, 0.77083945, 1)
 theme_override_font_sizes/font_size = 144
@@ -58,10 +65,12 @@ text = "todo: what type?"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Extra Text" type="Label" parent="Control/MarginContainer/Button/VBoxContainer"]
+[node name="Extra Text" type="Label" parent="Control/HBoxContainer/MarginContainer/Button/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "[TODO: Add details]"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="pressed" from="Control/HBoxContainer/MarginContainer/Button" to="." method="_on_button_pressed"]
