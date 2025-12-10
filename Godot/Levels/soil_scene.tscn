@@ -7,6 +7,7 @@
 render_priority = 0
 shader = ExtResource("2_be8oc")
 shader_parameter/displacement_strength = 0.5
+shader_parameter/darkening_strength = 1.5
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dhhtr"]
 material = SubResource("ShaderMaterial_ot30q")

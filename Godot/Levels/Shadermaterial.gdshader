@@ -1,44 +1,43 @@
 shader_type spatial;
 
-// Heightmap comes from GDScript.
-// When unassigned, Godot provides black (0.0), so we must protect against that.
 uniform sampler2D heightmap : hint_default_black;
+uniform float displacement_strength = 5.0;
 
-// Strength of displacement from heightmap
-uniform float displacement_strength = 20;
+// How much darker the soil gets in dips
+uniform float darkening_strength = 1.5;
+
 
 void vertex() {
-
-    // --- Prevent deformation in the editor ---
-    // ENGINE_EDITOR is true when NOT running the game.
 #ifdef ENGINE_EDITOR
-    return; // Keep the plane perfectly flat in the editor
+    return;
 #endif
 
-    // --- Sample heightmap ---
     float h = texture(heightmap, UV).r;
-
-    // If no heightmap is set yet (Godot gives 0.0), force flat height.
     if (h == 0.0) {
         h = 0.5;
     }
 
-    // Convert grayscale value (0.0–1.0) into displacement above/below mid-level (0.5)
     float offset = h - 0.5;
-
-    // Apply displacement
-    // Because your mesh is rotated 180° on X, positive offset goes downward in world space.
     VERTEX.y += offset * displacement_strength;
 
-    // Ensure normals respond correctly to lighting
     NORMAL = normalize(NORMAL);
 }
 
 
 void fragment() {
-    // Soil color
-    ALBEDO = vec3(0.25, 0.18, 0.10);
+    // Base soil color
+    vec3 base_color = vec3(0.25, 0.18, 0.10);
 
-    // Rough, non-shiny dirt
+    // Sample heightmap again to darken low spots
+    float h = texture(heightmap, UV).r;
+
+    // Depth darkening: lower values = darker
+    float dark_factor = 1.0 - (0.5 - h) * darkening_strength;
+
+    // Clamp so it never goes too dark
+    dark_factor = clamp(dark_factor, 0.3, 1.0);
+
+    ALBEDO = base_color * dark_factor;
+
     ROUGHNESS = 1.0;
 }
