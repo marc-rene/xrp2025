@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvrndk5lmvxwu"]
+
+[ext_resource type="Script" uid="uid://der6h4vpuqymc" path="res://soil_scene.gd" id="1_be8oc"]
+[ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_ot30q"]
+
+[node name="SoilScene" type="Node3D"]
+script = ExtResource("1_be8oc")
+
+[node name="Player" parent="." instance=ExtResource("2_ot30q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20536762, 0, 0.4673879)
+
+[editable path="Player"]
