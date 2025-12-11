@@ -14,20 +14,19 @@ size = Vector3(0.1, 1, 0.1)
 [node name="Plough" type="Node3D"]
 script = ExtResource("1_ccw4n")
 
-[node name="Blade" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.141)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blade"]
-shape = SubResource("BoxShape3D_ccw4n")
-
 [node name="XRToolsPickable" type="RigidBody3D" parent="."]
 script = ExtResource("2_uex86")
 metadata/_custom_type_script = "uid://dm7qnmyr16ijb"
 
+[node name="Blade" type="Area3D" parent="XRToolsPickable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.141)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XRToolsPickable/Blade"]
+shape = SubResource("BoxShape3D_ccw4n")
+
 [node name="Grab" type="CollisionShape3D" parent="XRToolsPickable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0049438477)
 shape = SubResource("BoxShape3D_uex86")
-debug_color = Color(0.81811696, 0.40748948, 0, 0.41960785)
 
 [node name="Hoe" parent="XRToolsPickable" instance=ExtResource("1_abjrp")]
 

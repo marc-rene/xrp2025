@@ -39,7 +39,7 @@ shape = SubResource("BoxShape3D_be8oc")
 transform = Transform3D(1, 0, 0, 0, 0.7116583, 0.7025258, 0, -0.7025258, 0.7116583, 0, 1.5974822, 0.8497872)
 
 [node name="Plough" parent="." instance=ExtResource("4_5a6j4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5365906, -0.67977905)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5470886, -0.56967545)
 
 [node name="Node3D" parent="." instance=ExtResource("4_grpck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21679688, 0)
