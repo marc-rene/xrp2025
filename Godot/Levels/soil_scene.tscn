@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvrndk5lmvxwu"]
+[gd_scene load_steps=10 format=3 uid="uid://bvrndk5lmvxwu"]
 
 [ext_resource type="Script" uid="uid://der6h4vpuqymc" path="res://Common/soil_scene.gd" id="1_be8oc"]
 [ext_resource type="Shader" uid="uid://dy8ung0rdbhqv" path="res://Levels/Shadermaterial.gdshader" id="2_be8oc"]
 [ext_resource type="PackedScene" uid="uid://bai3ak1iengvu" path="res://Entities/Plough.tscn" id="4_5a6j4"]
 [ext_resource type="PackedScene" uid="uid://dy03sse82fumx" path="res://Entities/Player/farmingplayer.tscn" id="4_grpck"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_u8867"]
+[ext_resource type="PackedScene" uid="uid://bidhnwbxovifv" path="res://Entities/User Interface/UI_Go_To_Watering.tscn" id="6_co10f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ot30q"]
 render_priority = 0
@@ -43,3 +45,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5470886, -0.56967545)
 
 [node name="Node3D" parent="." instance=ExtResource("4_grpck")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21679688, 0)
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("5_u8867")]
+transform = Transform3D(0.7010586, 0, 0.71310365, 0, 1, 0, -0.71310365, 0, 0.7010586, -1.0239851, 1, -1.2739348)
+screen_size = Vector2(2, 1)
+scene = ExtResource("6_co10f")
+viewport_size = Vector2(1200, 800)
+scene_properties_keys = PackedStringArray("GD_Go_To_Watering.gd")

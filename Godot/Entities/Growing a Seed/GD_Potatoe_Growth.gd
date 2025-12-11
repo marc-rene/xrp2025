@@ -18,6 +18,7 @@ func _update_speed_scale(new_speed):
 var keep_going = false
 func _start_growing():
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation = "Scene"
+	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
 	_update_speed_scale(Speed_Scale)
 	for day in range(90):
 		if keep_going == false:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc3o8b7ykg2eu"]
+[gd_scene load_steps=10 format=3 uid="uid://dc3o8b7ykg2eu"]
 
 [ext_resource type="Script" uid="uid://lxsl67xnmbio" path="res://Common/GD_Growing_Seed_Level_Logic.gd" id="1_dqn16"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_bv4mi"]
@@ -6,11 +6,31 @@
 [ext_resource type="PackedScene" uid="uid://c2qkj04k2id5r" path="res://Entities/Growing a Seed/Pickupable_Water_Can.tscn" id="4_ifql0"]
 [ext_resource type="PackedScene" uid="uid://duagdq1epbvko" path="res://Entities/Growing a Seed/Potato_seed_Growing.tscn" id="5_qy2j2"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qy2j2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_d1med"]
+sky_material = SubResource("ProceduralSkyMaterial_qy2j2")
+
+[sub_resource type="Environment" id="Environment_rxnym"]
+background_mode = 2
+sky = SubResource("Sky_d1med")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_t6kku"]
 size = Vector3(50, 0.1, 50)
 
 [node name="GrowingSomethingLevel" type="Node3D"]
 script = ExtResource("1_dqn16")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rxnym")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
@@ -27,7 +47,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="PickupableWaterCan" parent="." instance=ExtResource("4_ifql0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0077542, 0, -1.0769722)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0077542, 1.7377851, -1.0769722)
 
 [node name="PotatoSeedGrowing" parent="." instance=ExtResource("5_qy2j2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48910606, -2.3496869)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0495472, -2.3496869)

@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://dm7qnmyr16ijb" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ctpga"]
 [ext_resource type="PackedScene" uid="uid://dfa4nyg5cdkt6" path="res://Art/Watering Can.glb" id="2_d0sqr"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_w2iop"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_w2iop"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_lb5fv"]
-[ext_resource type="PackedScene" uid="uid://dh8grd7s3n8kg" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_snap.tscn" id="5_wdlxu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d0sqr"]
 size = Vector3(1.25, 0.725, 0.38)
@@ -13,18 +13,16 @@ size = Vector3(1.25, 0.725, 0.38)
 script = ExtResource("1_ctpga")
 metadata/_custom_type_script = "uid://dm7qnmyr16ijb"
 
-[node name="Watering Can" parent="." instance=ExtResource("2_d0sqr")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+[node name="PickableObject" parent="." instance=ExtResource("2_w2iop")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5999999, 0, 0, 0, 0.5999999, 0, 0, 0, 0.5999999, -0.16216904, 0.21629408, 0)
+[node name="Watering Can" parent="PickableObject" instance=ExtResource("2_d0sqr")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2689461, 0.36389783, 0)
 shape = SubResource("BoxShape3D_d0sqr")
 
-[node name="GrabPointHandLeft" parent="." instance=ExtResource("3_w2iop")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04701954, 0.48781723, 0)
+[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("3_w2iop")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04701954, 0.7547603, 0)
 
-[node name="GrabPointHandRight" parent="." instance=ExtResource("4_lb5fv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1598961, 0.47900993, 0)
-
-[node name="GrabPointSnap" parent="." instance=ExtResource("5_wdlxu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("4_lb5fv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1598961, 0.7396719, -0.12215763)
