@@ -10,7 +10,8 @@ var start_spawn_of_new_potatoes = false
 
 func _ready():
 	$"New Tatters".visible = false
-
+	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation = "Scene"
+	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
 
 func _update_speed_scale(new_speed):
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.speed_scale = new_speed
@@ -37,7 +38,7 @@ func _start_growing():
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("HEY ", body.name, " JUST ENTERED")
+	#print("HEY ", body.name, " JUST ENTERED")
 	if body.name == "PickupableWaterCan":
 		print("Should Start to grow")
 		keep_going = true
@@ -48,3 +49,19 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "PickupableWaterCan":
 		print("Should STOP to grow")
 		keep_going = false
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if area.name == "WATER_CAN_END" or area.name == "PickupableWaterCan":
+		print("Should START to grow")
+		if $Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position <= 0.01:
+			_start_growing()
+			keep_going = true
+		else:
+			keep_going = true
+
+
+func _on_area_3d_area_exited(area: Area3D) -> void:
+	if area.name == "WATER_CAN_END" or area.name == "PickupableWaterCan":
+		print("Should STOP to grow")
+		keep_going = false 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2qkj04k2id5r"]
+[gd_scene load_steps=7 format=3 uid="uid://c2qkj04k2id5r"]
 
 [ext_resource type="PackedScene" uid="uid://dfa4nyg5cdkt6" path="res://Art/Watering Can.glb" id="2_d0sqr"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_w2iop"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d0sqr"]
 size = Vector3(1.25, 0.725, 0.38)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fksr6"]
+size = Vector3(0.1, 0.275, 0.27)
 
 [node name="PickupableWaterCan" type="Node3D"]
 
@@ -23,3 +26,9 @@ transform = Transform3D(-0.040019013, -0.99145854, -0.12413082, 0.30422086, -0.1
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("4_lb5fv")]
 transform = Transform3D(-0.013960815, -0.9966745, 0.08028137, -0.17075759, 0.08148621, 0.9819378, -0.9852142, 0, -0.17132734, 0.06600336, 0.580357, -0.005073659)
+
+[node name="WATER_CAN_END" type="Area3D" parent="PickableObject"]
+transform = Transform3D(0.69185334, 0.72203803, 0, -0.72203803, 0.69185334, 0, 0, 0, 1, -0.8359176, 0.65527934, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject/WATER_CAN_END"]
+shape = SubResource("BoxShape3D_fksr6")
