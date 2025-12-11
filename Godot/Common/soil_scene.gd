@@ -10,7 +10,6 @@ const HM_SIZE: int = 256
 
 #bleh comment to make push
 
-
 # READY
 func _ready() -> void:
 	print("\n=== SOIL READY ===")

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bai3ak1iengvu" path="res://Entities/Plough.tscn" id="4_5a6j4"]
 [ext_resource type="PackedScene" uid="uid://dy03sse82fumx" path="res://Entities/Player/farmingplayer.tscn" id="4_grpck"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_u8867"]
-[ext_resource type="PackedScene" uid="uid://bidhnwbxovifv" path="res://Entities/User Interface/UI_Go_To_Watering.tscn" id="6_co10f"]
+[ext_resource type="PackedScene" path="res://Entities/User Interface/UI_Go_To_Watering.tscn" id="6_co10f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ot30q"]
 render_priority = 0
