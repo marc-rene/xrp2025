@@ -31,7 +31,7 @@ debug_color = Color(0.81811696, 0.40748948, 0, 0.41960785)
 
 [node name="Hoe" parent="XRToolsPickable" instance=ExtResource("1_abjrp")]
 
-[node name="XRToolsGrabPointHand" type="Marker3D" parent="."]
+[node name="XRToolsGrabPointHand" type="Marker3D" parent="XRToolsPickable"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.01894474, 0.057250977, 0.10601807)
 visible = false
 script = ExtResource("4_q0vnk")
