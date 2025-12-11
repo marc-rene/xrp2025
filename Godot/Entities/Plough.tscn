@@ -9,7 +9,7 @@
 size = Vector3(0.3, 0.1, 0.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uex86"]
-size = Vector3(0.1, 0.25, 0.1)
+size = Vector3(0.1, 1, 0.1)
 
 [node name="Plough" type="Node3D"]
 script = ExtResource("1_ccw4n")
