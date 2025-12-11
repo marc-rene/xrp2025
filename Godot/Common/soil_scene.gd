@@ -14,7 +14,7 @@ const HM_SIZE: int = 256
 func _ready() -> void:
 	if XRServer.find_interface("OpenXR").is_initialized() == false:
 		print("Using Backup cam")
-		cam = $BackupCamera
+#		cam = $BackupCamera
 	else:
 		print("Not using Backup cam")
 
