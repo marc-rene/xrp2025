@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2qkj04k2id5r"]
+[gd_scene load_steps=6 format=3 uid="uid://c2qkj04k2id5r"]
 
-[ext_resource type="Script" uid="uid://dm7qnmyr16ijb" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ctpga"]
 [ext_resource type="PackedScene" uid="uid://dfa4nyg5cdkt6" path="res://Art/Watering Can.glb" id="2_d0sqr"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_w2iop"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="3_w2iop"]
@@ -9,9 +8,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_d0sqr"]
 size = Vector3(1.25, 0.725, 0.38)
 
-[node name="PickupableWaterCan" type="RigidBody3D"]
-script = ExtResource("1_ctpga")
-metadata/_custom_type_script = "uid://dm7qnmyr16ijb"
+[node name="PickupableWaterCan" type="Node3D"]
 
 [node name="PickableObject" parent="." instance=ExtResource("2_w2iop")]
 
@@ -22,7 +19,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2689461, 0.36389783, 0)
 shape = SubResource("BoxShape3D_d0sqr")
 
 [node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("3_w2iop")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04701954, 0.7547603, 0)
+transform = Transform3D(-0.040019013, -0.99145854, -0.12413082, 0.30422086, -0.13042232, 0.9436311, -0.95176053, 0, 0.30684173, 0.04701954, 0.5760359, 0)
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("4_lb5fv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1598961, 0.7396719, -0.12215763)
+transform = Transform3D(-0.013960815, -0.9966745, 0.08028137, -0.17075759, 0.08148621, 0.9819378, -0.9852142, 0, -0.17132734, 0.06600336, 0.580357, -0.005073659)

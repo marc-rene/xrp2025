@@ -14,13 +14,16 @@ func _ready():
 
 func _update_speed_scale(new_speed):
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.speed_scale = new_speed
+	print("Growing Speed is now ", new_speed)
 
 var keep_going = false
 func _start_growing():
+	print("STARTED GROWING MASHALLAH")
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation = "Scene"
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
 	_update_speed_scale(Speed_Scale)
 	for day in range(90):
+		print("On day: ", day)
 		if keep_going == false:
 			day -= 1
 		else:
@@ -36,10 +39,12 @@ func _start_growing():
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("HEY ", body.name, " JUST ENTERED")
 	if body.name == "PickupableWaterCan":
+		print("Should Start to grow")
 		keep_going = true
 		_start_growing()
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.name == "PickupableWaterCan":
+		print("Should STOP to grow")
 		keep_going = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dc3o8b7ykg2eu"]
+[gd_scene load_steps=11 format=3 uid="uid://dc3o8b7ykg2eu"]
 
 [ext_resource type="Script" uid="uid://lxsl67xnmbio" path="res://Common/GD_Growing_Seed_Level_Logic.gd" id="1_dqn16"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_bv4mi"]
@@ -21,6 +21,8 @@ glow_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t6kku"]
 size = Vector3(50, 0.1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qy2j2"]
 
 [node name="GrowingSomethingLevel" type="Node3D"]
 script = ExtResource("1_dqn16")
@@ -47,7 +49,13 @@ autoplay = true
 bus = &"Music"
 
 [node name="PickupableWaterCan" parent="." instance=ExtResource("4_ifql0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0077542, 1.7377851, -1.0769722)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6159267, 0.5443518, -0.076972246)
 
 [node name="PotatoSeedGrowing" parent="." instance=ExtResource("5_qy2j2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0495472, -2.3496869)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52294683, -2.3496869)
+
+[node name="table" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5222917, 0.04232037, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="table"]
+shape = SubResource("BoxShape3D_qy2j2")
