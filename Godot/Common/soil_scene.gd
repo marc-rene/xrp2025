@@ -184,13 +184,13 @@ func do_bang(origin, dir):
 	dig_at_world_position(hit.position, 0.5, 0.12)
 	
 	
-func _input(event: InputEvent) -> void:
+"""func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT or event.is_action("trigger"):
 		var origin = cam.project_ray_origin(event.position)
 		var dir = cam.project_ray_normal(event.position)
-		do_bang(origin, dir)
+		do_bang(origin, dir)"""
 		
 
 func _on_xr_controller_right_hand_button_pressed(name: String) -> void:
