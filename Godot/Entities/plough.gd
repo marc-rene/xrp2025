@@ -20,14 +20,14 @@ func _ready():
 	pickable.released.connect(_on_released)
 
 
-### XRTools → called when grabbed
+### XRTools called when grabbed
 func _on_picked_up(by):
 	is_held = true
 	last_pos = global_transform.origin
 	print("PLOUGH PICKED UP")
 
 
-### XRTools → called when released
+### XRTools  called when released
 func _on_released(by):
 	is_held = false
 	print("PLOUGH RELEASED")
