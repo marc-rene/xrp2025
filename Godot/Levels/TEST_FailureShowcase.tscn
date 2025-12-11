@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bxo7x5dkfu4pl"]
+[gd_scene load_steps=11 format=3 uid="uid://bbxn8c8wm3xou"]
 
-[ext_resource type="PackedScene" uid="uid://bxjcjs2f5thwu" path="res://Art/Seeds/Potatoes/Potato.glb" id="1_8wpus"]
-[ext_resource type="Script" uid="uid://biepy5a78fagh" path="res://Tools/TEMP_Test_GLTF_Anim.gd" id="1_k6byi"]
-[ext_resource type="PackedScene" uid="uid://b15lankali8b5" path="res://Art/Seeds/Potatoes/Potato_3.glb" id="2_p21nk"]
-[ext_resource type="PackedScene" uid="uid://dv2lpeqkrs3hx" path="res://Art/Seeds/Potatoes/Potato_4.glb" id="3_3xxd6"]
-[ext_resource type="PackedScene" uid="uid://cmrvh7s6drpbo" path="res://Art/Seeds/Potatoes/Potato_5.glb" id="4_k6byi"]
-[ext_resource type="PackedScene" uid="uid://caxn60t387uj0" path="res://Art/Seeds/Potatoes/Potatoe_WORK_CURSE_YOU_DAMN.glb" id="5_66j5u"]
+[ext_resource type="Script" uid="uid://biepy5a78fagh" path="res://Tools/TEMP_Test_GLTF_Anim.gd" id="1_hhhh2"]
+[ext_resource type="PackedScene" uid="uid://bxjcjs2f5thwu" path="res://Art/Seeds/Potatoes/Potato.glb" id="2_dbutu"]
+[ext_resource type="PackedScene" uid="uid://b15lankali8b5" path="res://Art/Seeds/Potatoes/Potato_3.glb" id="3_bdghw"]
+[ext_resource type="PackedScene" uid="uid://dv2lpeqkrs3hx" path="res://Art/Seeds/Potatoes/Potato_4.glb" id="4_urs33"]
+[ext_resource type="PackedScene" uid="uid://cmrvh7s6drpbo" path="res://Art/Seeds/Potatoes/Potato_5.glb" id="5_gnu5b"]
+[ext_resource type="PackedScene" uid="uid://caxn60t387uj0" path="res://Art/Seeds/Potatoes/Potatoe_WORK_CURSE_YOU_DAMN.glb" id="6_3a1k2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6byi"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,7 +24,7 @@ glow_enabled = true
 size = Vector3(50, 0.1, 50)
 
 [node name="GrowingSomethingLevel" type="Node3D"]
-script = ExtResource("1_k6byi")
+script = ExtResource("1_hhhh2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tgna1")
@@ -40,9 +40,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 shape = SubResource("BoxShape3D_p21nk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.9535489, 0.30123842, 0, -0.30123842, 0.9535489, 5, 1.8879914, 4.008186)
+transform = Transform3D(1, 0, 0, 0, 0.9535489, 0.30123842, 0, -0.30123842, 0.9535489, 5, 1.8879914, 4.9652786)
 
-[node name="Potatoe #1" parent="." instance=ExtResource("1_8wpus")]
+[node name="Potatoe #1" parent="." instance=ExtResource("2_dbutu")]
 
 [node name="Leafs" parent="Potatoe #1" index="1"]
 transform = Transform3D(0.019973338, 0.0053807944, 0, -0.0053807944, 0.019973338, 0, 0, 0, 0.020685434, -0.010329275, 0.0037994785, -0.00059411675)
@@ -1304,7 +1304,7 @@ transform = Transform3D(-0.01837579, 0.0024729713, 0.02930095, 0.016215008, 0.02
 [node name="Long Sprout_007" parent="Potatoe #1" index="21"]
 transform = Transform3D(0.027435182, 0.0099589005, -0.018720632, -0.0071086627, 0.033160646, 0.0072228396, 0.019977704, -0.001876912, 0.028278956, -0.0034671053, -0.0010105968, 0.0016252995)
 
-[node name="Potatoe #2" parent="." instance=ExtResource("2_p21nk")]
+[node name="Potatoe #2" parent="." instance=ExtResource("3_bdghw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="Leafs" parent="Potatoe #2" index="1"]
@@ -2567,10 +2567,10 @@ transform = Transform3D(-0.01837579, 0.0024729713, 0.02930095, 0.016215008, 0.02
 [node name="Long Sprout_007" parent="Potatoe #2" index="21"]
 transform = Transform3D(0.027435182, 0.0099589005, -0.018720632, -0.0071086627, 0.033160646, 0.0072228396, 0.019977704, -0.001876912, 0.028278956, -0.0034671053, -0.0010105968, 0.0016252995)
 
-[node name="Potatoe #3" parent="." instance=ExtResource("2_p21nk")]
+[node name="Potatoe #3" parent="." instance=ExtResource("3_bdghw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Potatoe #Lose patience" parent="." instance=ExtResource("3_3xxd6")]
+[node name="Potatoe #Lose patience" parent="." instance=ExtResource("4_urs33")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 
 [node name="Leafs" parent="Potatoe #Lose patience" index="1"]
@@ -3833,7 +3833,7 @@ transform = Transform3D(-0.01837579, 0.0024729713, 0.02930095, 0.016215008, 0.02
 [node name="Long Sprout_007" parent="Potatoe #Lose patience" index="21"]
 transform = Transform3D(0.027435182, 0.0099589005, -0.018720632, -0.0071086627, 0.033160646, 0.0072228396, 0.019977704, -0.001876912, 0.028278956, -0.0034671053, -0.0010105968, 0.0016252995)
 
-[node name="Potatoe #Lost Patience" parent="." instance=ExtResource("4_k6byi")]
+[node name="Potatoe #Lost Patience" parent="." instance=ExtResource("5_gnu5b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [node name="Leafs" parent="Potatoe #Lost Patience" index="1"]
@@ -5096,7 +5096,7 @@ transform = Transform3D(-0.01837579, 0.0024729713, 0.02930095, 0.016215008, 0.02
 [node name="Long Sprout_007" parent="Potatoe #Lost Patience" index="21"]
 transform = Transform3D(0.027435182, 0.0099589005, -0.018720632, -0.0071086627, 0.033160646, 0.0072228396, 0.019977704, -0.001876912, 0.028278956, -0.0034671053, -0.0010105968, 0.0016252995)
 
-[node name="Potatoe #AAAAAHHHHHH" parent="." instance=ExtResource("5_66j5u")]
+[node name="Potatoe #AAAAAHHHHHH" parent="." instance=ExtResource("6_3a1k2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
 [node name="Leafs" parent="Potatoe #AAAAAHHHHHH" index="1"]

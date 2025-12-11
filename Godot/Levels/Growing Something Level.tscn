@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc3o8b7ykg2eu"]
+
+[ext_resource type="Script" uid="uid://lxsl67xnmbio" path="res://Common/GD_Growing_Seed_Level_Logic.gd" id="1_dqn16"]
+[ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_bv4mi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t6kku"]
+size = Vector3(50, 0.1, 50)
+
+[node name="GrowingSomethingLevel" type="Node3D"]
+script = ExtResource("1_dqn16")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_t6kku")
+
+[node name="Player" parent="." instance=ExtResource("2_bv4mi")]
