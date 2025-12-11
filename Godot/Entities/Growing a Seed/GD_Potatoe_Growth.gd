@@ -10,8 +10,8 @@ var start_spawn_of_new_potatoes = false
 
 func _ready():
 	$"New Tatters".visible = false
-	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation = "Scene"
-	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
+	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation = "[stop]"
+	#$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
 
 func _update_speed_scale(new_speed):
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.speed_scale = new_speed
@@ -21,15 +21,18 @@ var keep_going = false
 func _start_growing():
 	print("STARTED GROWING MASHALLAH")
 	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation = "Scene"
-	$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
+	#$Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position = 0
 	_update_speed_scale(Speed_Scale)
 	for day in range(90):
 		print("On day: ", day)
 		if keep_going == false:
 			day -= 1
+			print("Keep going is false, day is now: ", day)
 		else:
+			print("Text should be : 'Day: %d'" % day)
 			$Label3D.text = "Day: %d" % day
 			await get_tree().create_timer(0.041625 / $Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.speed_scale).timeout
+			print("Timer finished")
 			if day == 80:
 				$"New Tatters".scale(0.01)
 				$"New Tatters".visible = false

@@ -59,3 +59,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5222917, 0.04232037, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="table"]
 shape = SubResource("BoxShape3D_qy2j2")
+
+[editable path="PotatoSeedGrowing"]
+[editable path="PotatoSeedGrowing/Potatoe_WORK_CURSE_YOU_DAMN"]
