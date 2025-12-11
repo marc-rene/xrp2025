@@ -12,14 +12,21 @@ const HM_SIZE: int = 256
 
 
 # READY
-
 func _ready() -> void:
 	if XRServer.find_interface("OpenXR").is_initialized() == false:
 		print("Using Backup cam")
 		cam = $BackupCamera
 	else:
 		print("Not using Backup cam")
-		
+
+	# CONNECT PLOUGH DIGGING SIGNAL
+	var plough := get_node_or_null("Plough")
+	if plough:
+		plough.plough_dig.connect(_on_plough_dig)
+		print("Plough connected to soil digging!")
+	else:
+		print("WARNING: Plough not found in scene!")
+
 	_validate_scene_setup()
 	_create_heightmap()
 	_apply_heightmap_to_material()
@@ -96,9 +103,17 @@ func _apply_heightmap_to_material() -> void:
 
 
 
-# -------------------------------------------------------
+
+# HANDLE DIGGING TRIGGERED BY THE PLOUGH TOOL
+
+func _on_plough_dig(world_pos: Vector3) -> void:
+	dig_at_world_position(world_pos, 0.45, 0.10)
+
+
+
+
 # DIGGING FUNCTION
-# -------------------------------------------------------
+
 func dig_at_world_position(world_pos: Vector3, radius: float = 0.5, depth: float = 0.1) -> void:
 	# Convert world -> local
 	
@@ -150,45 +165,26 @@ func dig_at_world_position(world_pos: Vector3, radius: float = 0.5, depth: float
 
 
 
-# -------------------------------------------------------
+
 # MOUSE CLICK DIGGING TEST
-# -------------------------------------------------------
+
 func do_bang(origin, dir):
 	var space = get_world_3d().direct_space_state
 	var query = PhysicsRayQueryParameters3D.create(origin, origin + dir * 100.0)
 	var hit = space.intersect_ray(query)
 	
-	
-
 	if hit.is_empty():
 		print("NO HIT — ray missed the collider.")
 		return
 
 	print("Hit object: ", hit.collider)
 	print("Hit position: ", hit.position)
-	
-	# Debug purposes to figure out where the dig will happen
-	var sphere := MeshInstance3D.new()
-	sphere.mesh = SphereMesh.new()
-	var mat := StandardMaterial3D.new()
-	mat.albedo_color = Color(1, 0, 0)  # bright red so even you can see it
-	sphere.material_override = mat
 
-	#sphere.global_position = hit.position
-	sphere.global_position = $"Player/XR_Controller_LeftHand/FunctionPointer Right".to_global($"Player/XR_Controller_LeftHand/FunctionPointer Right".last_collided_at)
-	print("origin: ", origin)
-	print("hit position: ", hit.position)
-	print("Right hand pointer (un-delocal'ed): ", $"Player/XR_Controller_LeftHand/FunctionPointer Right".last_collided_at)
-	print("Right hand pointer (delocal'ed): ", $"Player/XR_Controller_LeftHand/FunctionPointer Right".to_global($"Player/XR_Controller_LeftHand/FunctionPointer Right".last_collided_at))
-	print("- - - - - - - - - - - - - - - - - - - - - - -")
-	get_tree().current_scene.add_child(sphere)
-
-	# No more collider == soil_mesh restriction, this simplifies testing
+	# No more collider == soil_mesh restriction
 	dig_at_world_position(hit.position, 0.5, 0.12)
 	
 	
 func _input(event: InputEvent) -> void:
-	
 	if event is InputEventMouseButton \
 	and event.pressed \
 	and event.button_index == MOUSE_BUTTON_LEFT or event.is_action("trigger"):
@@ -203,14 +199,7 @@ func _on_xr_controller_right_hand_button_pressed(name: String) -> void:
 	var end = start + (dir * 100)
 	print("RIGHT BANG from  ", start, " (facing: ", dir, ")")
 	do_bang(start, dir)
-	var im = ImmediateMesh.new()
-	im.clear_surfaces()
-	im.surface_begin(Mesh.PRIMITIVE_LINES)
-	im.surface_set_color(Color(1,1,0))
-	im.surface_add_vertex(start)
-	im.surface_add_vertex(end)
-	im.surface_end()
+
 
 func _on_xr_controller_left_hand_button_pressed(name: String) -> void:
-	#do_bang($"Player/XR_Controller_LeftHand/FunctionPointer Left".global_position, $"Player/XR_Controller_LeftHand/FunctionPointer Left".global_transform.basis.z)
 	pass
