@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b387omyqc2ohs"
+path="res://.godot/imported/Coyete Sunset.ogg-21ba54c6f2f397089e5c08087cd84af2.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Coyete Sunset.ogg"
+dest_files=["res://.godot/imported/Coyete Sunset.ogg-21ba54c6f2f397089e5c08087cd84af2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
