@@ -3,7 +3,6 @@ extends Node3D
 signal plough_dig(world_pos: Vector3)
 
 @onready var blade_area: Area3D = $Blade
-@onready var pickable = $XRToolsPickable
 
 var is_held := false
 var touching_soil := false

@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://3tga7go8n3ng" path="res://Art/Hoe.glb" id="1_abjrp"]
 [ext_resource type="Script" uid="uid://uhdu3430iaow" path="res://Entities/plough.gd" id="1_ccw4n"]
-[ext_resource type="Script" uid="uid://dm7qnmyr16ijb" path="res://addons/godot-xr-tools/objects/pickable.gd" id="2_uex86"]
-[ext_resource type="Script" uid="uid://n1cv62p5odjb" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand.gd" id="4_q0vnk"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_q0vnk"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_4vx3m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ccw4n"]
 size = Vector3(0.3, 0.1, 0.2)
@@ -14,26 +14,19 @@ size = Vector3(0.1, 1, 0.1)
 [node name="Plough" type="Node3D"]
 script = ExtResource("1_ccw4n")
 
-[node name="Blade" type="Area3D" parent="."]
+[node name="PickableObject" parent="." instance=ExtResource("2_q0vnk")]
+
+[node name="Blade" type="Area3D" parent="PickableObject"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0.141)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Blade"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PickableObject/Blade"]
 shape = SubResource("BoxShape3D_ccw4n")
 
-[node name="XRToolsPickable" type="RigidBody3D" parent="."]
-script = ExtResource("2_uex86")
-metadata/_custom_type_script = "uid://dm7qnmyr16ijb"
-
-[node name="Grab" type="CollisionShape3D" parent="XRToolsPickable"]
+[node name="Grab" type="CollisionShape3D" parent="PickableObject"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0049438477)
 shape = SubResource("BoxShape3D_uex86")
-debug_color = Color(0.81811696, 0.40748948, 0, 0.41960785)
 
-[node name="Hoe" parent="XRToolsPickable" instance=ExtResource("1_abjrp")]
+[node name="Hoe" parent="PickableObject" instance=ExtResource("1_abjrp")]
 
-[node name="XRToolsGrabPointHand" type="Marker3D" parent="XRToolsPickable"]
+[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("4_4vx3m")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.01894474, 0.057250977, 0.10601807)
-visible = false
-script = ExtResource("4_q0vnk")
-hand = 1
-metadata/_custom_type_script = "uid://n1cv62p5odjb"
