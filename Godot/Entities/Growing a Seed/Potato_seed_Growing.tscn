@@ -1338,4 +1338,8 @@ transform = Transform3D(-0.680214, 0.15493113, -2.1381211, 0.2766837, 1.3367044,
 mesh = SubResource("ArrayMesh_ui4sq")
 skeleton = NodePath("")
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+
 [editable path="Potatoe_WORK_CURSE_YOU_DAMN"]
