@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://duagdq1epbvko"]
+[gd_scene load_steps=7 format=4 uid="uid://duagdq1epbvko"]
 
 [ext_resource type="PackedScene" uid="uid://caxn60t387uj0" path="res://Art/Seeds/Potatoes/Potatoe_WORK_CURSE_YOU_DAMN.glb" id="1_mjcks"]
 [ext_resource type="Script" uid="uid://cfdxlhopeh4q8" path="res://Entities/Growing a Seed/GD_Potatoe_Growth.gd" id="1_qm0x3"]
@@ -42,6 +42,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sfk5g")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qm0x3"]
+size = Vector3(1.495, 3.005, 1.51)
 
 [node name="PotatoSeedGrowing" type="Node3D"]
 script = ExtResource("1_qm0x3")
@@ -1341,5 +1344,10 @@ skeleton = NodePath("")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95093477, 0)
+shape = SubResource("BoxShape3D_qm0x3")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 
 [editable path="Potatoe_WORK_CURSE_YOU_DAMN"]
