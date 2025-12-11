@@ -2,7 +2,7 @@ extends Node3D
 
 signal plough_dig(world_pos: Vector3)
 
-@onready var blade_area: Area3D = $Blade
+@onready var blade_area: Area3D = $PickableObject/Blade
 
 var is_held := false
 var touching_soil := false
@@ -13,6 +13,7 @@ func _ready():
 	# Connect blade collisions
 	blade_area.body_entered.connect(_on_blade_enter)
 	blade_area.body_exited.connect(_on_blade_exit)
+	pass
 	
 func _on_blade_enter(body):
 	if body.is_in_group("soil"):
