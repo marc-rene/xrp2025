@@ -30,7 +30,7 @@ shadow_enabled = true
 [node name="SoilMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_dhhtr")
 
-[node name="Soilcollison" type="StaticBody3D" parent="."]
+[node name="Soilcollison" type="StaticBody3D" parent="." groups=["soil"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Soilcollison"]
 shape = SubResource("BoxShape3D_be8oc")
