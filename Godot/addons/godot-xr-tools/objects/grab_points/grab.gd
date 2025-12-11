@@ -151,7 +151,7 @@ func release() -> void:
 				.bind(collision_hand))
 
 	# Report the release
-	print_verbose("%s> released by %s", [what.name, by.name])
+	print_verbose("%s> released by %s" % [what.name, by.name])
 	what.released.emit(what, by)
 
 

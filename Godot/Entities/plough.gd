@@ -30,7 +30,7 @@ func _on_picked_up(by):
 
 
 # XRTools: object released
-func _on_released(by):
+func _on_released(what, by):
 	is_held = false
 	print("Plough released")
 
