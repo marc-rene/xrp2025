@@ -53,7 +53,7 @@ func _physics_process(delta):
 	if not touching_soil:
 		return
 
-	var current = global_transform.origin
+	var current = blade_area.global_transform.origin
 	var moved := current.distance_to(last_pos)
 
 	if moved > 0.01:
@@ -61,4 +61,4 @@ func _physics_process(delta):
 		print("DIG:", contact_pos)
 		emit_signal("plough_dig", contact_pos)
 
-	last_pos = current
+	last_pos = blade_area.global_transform.origin
