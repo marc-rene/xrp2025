@@ -14,25 +14,7 @@ func _ready():
 	# Connect blade collisions
 	blade_area.body_entered.connect(_on_blade_enter)
 	blade_area.body_exited.connect(_on_blade_exit)
-
-	# XRTools pick-up
-	pickable.picked_up.connect(_on_picked_up)
-	pickable.released.connect(_on_released)
-
-
-### XRTools called when grabbed
-func _on_picked_up(by):
-	is_held = true
-	last_pos = global_transform.origin
-	print("PLOUGH PICKED UP")
-
-
-### XRTools  called when released
-func _on_released(by):
-	is_held = false
-	print("PLOUGH RELEASED")
-
-
+	
 func _on_blade_enter(body):
 	if body.is_in_group("soil"):
 		touching_soil = true

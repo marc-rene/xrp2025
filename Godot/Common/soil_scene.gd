@@ -2,7 +2,6 @@ extends Node3D
 
 # --- Node references ---
 @onready var soil_mesh: MeshInstance3D = $SoilMesh
-@onready var cam: Camera3D = $Player/XRCamera3D   # Used for mouse-based digging test
 
 # --- Heightmap ---
 var heightmap_img: Image
@@ -109,9 +108,6 @@ func _apply_heightmap_to_material() -> void:
 func _on_plough_dig(world_pos: Vector3) -> void:
 	dig_at_world_position(world_pos, 0.45, 0.10)
 
-
-
-
 # DIGGING FUNCTION
 
 func dig_at_world_position(world_pos: Vector3, radius: float = 0.5, depth: float = 0.1) -> void:
@@ -193,12 +189,12 @@ func do_bang(origin, dir):
 		do_bang(origin, dir)"""
 		
 
-func _on_xr_controller_right_hand_button_pressed(name: String) -> void:
+"""func _on_xr_controller_right_hand_button_pressed(name: String) -> void:
 	var start = $"Player/XR_Controller_LeftHand/FunctionPointer Right".global_position
 	var dir = $"Player/XR_Controller_LeftHand/FunctionPointer Right".global_transform.basis.z
 	var end = start + (dir * 100)
 	print("RIGHT BANG from  ", start, " (facing: ", dir, ")")
-	do_bang(start, dir)
+	do_bang(start, dir)"""
 
 
 func _on_xr_controller_left_hand_button_pressed(name: String) -> void:

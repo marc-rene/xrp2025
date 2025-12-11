@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dy03sse82fumx"]
+
+[ext_resource type="Script" uid="uid://bp2estwtd37tl" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="2_lpk10"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="2_rn4ex"]
+[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="2_t573d"]
+[ext_resource type="Script" uid="uid://b7wb38ilp8fjt" path="res://addons/godot-xr-tools/player/player_body.gd" id="3_lpk10"]
+[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="3_w3ple"]
+
+[node name="Node3D" type="XROrigin3D"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+
+[node name="Righthand" type="XRController3D" parent="."]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="Righthand" instance=ExtResource("2_t573d")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="Righthand"]
+script = ExtResource("2_lpk10")
+metadata/_custom_type_script = "uid://bp2estwtd37tl"
+
+[node name="Lefthand" type="XRController3D" parent="."]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="Lefthand" instance=ExtResource("3_w3ple")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="Lefthand"]
+script = ExtResource("2_lpk10")
+metadata/_custom_type_script = "uid://bp2estwtd37tl"
+
+[node name="PlayerBody" type="CharacterBody3D" parent="." groups=["player_body"] instance=ExtResource("2_rn4ex")]
+process_priority = -100
+process_physics_priority = -100
+top_level = true
+collision_layer = 524288
+collision_mask = 1023
+script = ExtResource("3_lpk10")
