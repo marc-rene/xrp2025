@@ -35,3 +35,5 @@ metadata/_custom_type_script = "uid://bp2estwtd37tl"
 laser_length = 1
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_rn4ex")]
+
+[node name="AudioListener3D" type="AudioListener3D" parent="."]
