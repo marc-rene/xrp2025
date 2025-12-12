@@ -27,4 +27,9 @@ func _ready():
 		enable_passthrough()
 
 	else:
+		print("OH SHIT OPENXR IS OOPSIE WOOPSIE")
+		print("XR_Interface ok?: ", xr_interface != null)
+		print("XR_Interface is initialised?: ", xr_interface.is_initialized())
+		print("XR_Interface capabilities (0 is bad): ", xr_interface.get_capabilities())
 		print("OpenXR not initialized, please check if your headset is connected")
+		
