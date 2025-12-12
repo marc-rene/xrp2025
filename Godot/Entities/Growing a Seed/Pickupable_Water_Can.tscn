@@ -67,7 +67,8 @@ shape = SubResource("BoxShape3D_fksr6")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="PickableObject/WATER_CAN_END"]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, -0.07822142, -3.72529e-09, 8.881784e-16)
-amount = 30
+amount = 250
+amount_ratio = 0.1065
 local_coords = true
 trail_enabled = true
 trail_lifetime = 2.8499999999999996

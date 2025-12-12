@@ -7,6 +7,7 @@ extends Node
 @export var Speed_Scale = 0.1
 @export var Water_Can_Ref : Node3D
 
+var check_if_we_waterin_again = false
 var start_spawn_of_new_potatoes = false
 
 func _ready():
@@ -37,6 +38,7 @@ func _start_growing():
             growy_tween.tween_property($"New Tatters", "scale", Vector3.ONE, (0.041625 / $Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.speed_scale)* 20).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
     $Label3D.text = "TAYTO FOR EVERYONE"
 
+"""
 func _on_area_3d_body_entered(body: Node3D) -> void:
     #print("HEY ", body.name, " JUST ENTERED")
     if body.name == "PickupableWaterCan":
@@ -49,8 +51,15 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
     if body.name == "PickupableWaterCan":
         print("Should STOP to grow")
         keep_going = false
+"""
+
+func start_the_show():
+    if $Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position <= 0.01:
+        _start_growing()
+        keep_going = true
 
 
+var new_area_ref : Area3D
 func _on_area_3d_area_entered(area: Area3D) -> void:
     if area.name == "WATER_CAN_END" or area.name == "PickupableWaterCan":
         print("Should START to grow")
@@ -58,13 +67,20 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
             print("Can's facing down too yay!")
         else: 
             print("Want to start growing but need to water")
+            new_area_ref = area
+            check_if_we_waterin_again = true
             return
-        if $Potatoe_WORK_CURSE_YOU_DAMN/AnimationPlayer.current_animation_position <= 0.01:
-            _start_growing()
-            keep_going = true
-        else:
-            keep_going = true
+        
 
+func _physics_process(delta: float) -> void:
+    if check_if_we_waterin_again:
+        if $Area3D.overlaps_area(new_area_ref):
+            if Water_Can_Ref.facing_down == true:
+                print("AWESOME We're in the same area and we're watering") 
+                start_the_show()
+                check_if_we_waterin_again = false
+            else:
+                print("CRAP We're in the same area but no uisce") 
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
     if area.name == "WATER_CAN_END" or area.name == "PickupableWaterCan":
