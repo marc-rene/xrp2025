@@ -3,7 +3,7 @@ shader_type spatial;
 uniform sampler2D heightmap : hint_default_black;
 uniform float displacement_strength = 5.0;
 
-// How much darker the soil gets in dips
+// Darkens soil
 uniform float darkening_strength = 1.5;
 
 
@@ -31,10 +31,10 @@ void fragment() {
     // Sample heightmap again to darken low spots
     float h = texture(heightmap, UV).r;
 
-    // Depth darkening: lower values = darker
+    // Depth darkening lower values means darker outline
     float dark_factor = 1.0 - (0.5 - h) * darkening_strength;
 
-    // Clamp so it never goes too dark
+    // Prevents from going too dark
     dark_factor = clamp(dark_factor, 0.3, 1.0);
 
     ALBEDO = base_color * dark_factor;

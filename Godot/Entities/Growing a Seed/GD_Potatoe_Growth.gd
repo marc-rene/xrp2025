@@ -40,16 +40,16 @@ func _start_growing():
 
 """
 func _on_area_3d_body_entered(body: Node3D) -> void:
-    #print("HEY ", body.name, " JUST ENTERED")
-    if body.name == "PickupableWaterCan":
-        print("Should Start to grow")
+	#print("HEY ", body.name, " JUST ENTERED")
+	if body.name == "PickupableWaterCan":
+		print("Should Start to grow")
         keep_going = true
         _start_growing()
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-    if body.name == "PickupableWaterCan":
-        print("Should STOP to grow")
+	if body.name == "PickupableWaterCan":
+		print("Should STOP to grow")
         keep_going = false
 """
 

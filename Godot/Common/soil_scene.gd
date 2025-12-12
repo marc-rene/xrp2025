@@ -1,18 +1,16 @@
 extends Node3D
 
-# --- Node references ---
+# Node references 
 @onready var soil_mesh: MeshInstance3D = $SoilMesh
 
-# --- Heightmap ---
+# Heightmap 
 var heightmap_img: Image
 var heightmap_tex: ImageTexture
 const HM_SIZE: int = 256
 
-#bleh comment to make push
-
 # READY
 func _ready() -> void:
-	print("\n=== SOIL READY ===")
+	print("\n SOIL READY")
 
 	if XRServer.find_interface("OpenXR").is_initialized() == false:
 		print("Using Backup cam")
@@ -36,7 +34,7 @@ func _ready() -> void:
 
 
 
-# VALIDATION — DEBUGGING HELP
+# DEBUGGING HELP
 func _validate_scene_setup() -> void:
 	print("\n=== Soil Scene Validation ===")
 
@@ -116,7 +114,7 @@ func _on_plough_dig(world_pos: Vector3) -> void:
 
 # DIGGING FUNCTION
 func dig_at_world_position(world_pos: Vector3, radius: float = 0.5, depth: float = 0.1) -> void:
-	print("\n--- DIG FUNCTION START ---")
+	print("\n DIG FUNCTION START ")
 	print("DEBUG: world_pos =", world_pos)
 
 	# Convert world -> local

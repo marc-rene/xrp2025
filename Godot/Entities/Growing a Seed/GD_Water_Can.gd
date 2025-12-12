@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		$PickableObject/WATER_CAN_END/GPUParticles3D.emitting = false
 		facing_down = false
 	$PickableObject/WATER_CAN_END/GPUParticles3D.amount_ratio = remap(alignment, 0.45, 0.99, 0, 0.8) #
-    """
+	"""
     if alignment > 0.95:
         $PickableObject/WATER_CAN_END/GPUParticles3D.amount_ratio = 1
     elif alignment > 0.85:
@@ -38,4 +38,4 @@ func _physics_process(delta: float) -> void:
         $PickableObject/WATER_CAN_END/GPUParticles3D.amount_ratio = 0.8
     elif alignment > 0.7:
         $PickableObject/WATER_CAN_END/GPUParticles3D.amount = 80
-    """        
+	"""        
