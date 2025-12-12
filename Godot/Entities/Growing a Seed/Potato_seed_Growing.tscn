@@ -44,7 +44,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sfk5g")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qm0x3"]
-size = Vector3(1.495, 3.005, 1.51)
+size = Vector3(2.48, 4.43, 2.61)
 
 [node name="PotatoSeedGrowing" type="Node3D"]
 script = ExtResource("1_qm0x3")
