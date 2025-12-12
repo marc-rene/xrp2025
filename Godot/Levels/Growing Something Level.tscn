@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc3o8b7ykg2eu"]
+[gd_scene load_steps=13 format=3 uid="uid://dc3o8b7ykg2eu"]
 
 [ext_resource type="Script" uid="uid://lxsl67xnmbio" path="res://Common/GD_Growing_Seed_Level_Logic.gd" id="1_dqn16"]
 [ext_resource type="PackedScene" uid="uid://c5yoab8ubtuqt" path="res://Entities/Player/XR_Player.tscn" id="2_bv4mi"]
 [ext_resource type="AudioStream" uid="uid://b387omyqc2ohs" path="res://Audio/Coyete Sunset.ogg" id="3_iniim"]
 [ext_resource type="PackedScene" uid="uid://c2qkj04k2id5r" path="res://Entities/Growing a Seed/Pickupable_Water_Can.tscn" id="4_ifql0"]
 [ext_resource type="PackedScene" uid="uid://duagdq1epbvko" path="res://Entities/Growing a Seed/Potato_seed_Growing.tscn" id="5_qy2j2"]
+[ext_resource type="PackedScene" uid="uid://r0ud0kxt16ll" path="res://Entities/User Interface/Video_Player_3D.tscn" id="6_d1med"]
+[ext_resource type="PackedScene" uid="uid://bpjm7ia353c5q" path="res://Entities/User Interface/VIDEOUI_GoodPotatoeVideo.tscn" id="7_rxnym"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qy2j2"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -50,7 +52,6 @@ bus = &"Music"
 
 [node name="PickupableWaterCan" parent="." instance=ExtResource("4_ifql0")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 1.9912696, 0.5443518, -2.064144)
-facing_down = null
 
 [node name="table" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5222917, 0.04232037, 0)
@@ -1335,5 +1336,15 @@ transform = Transform3D(0.0034546307, 0.0018736686, -0.003053541, 0.0023965368, 
 [node name="Plane_399" parent="PotatoSeedGrowing/Potatoe_WORK_CURSE_YOU_DAMN" index="421"]
 transform = Transform3D(-0.021241087, -0.006465076, 0.02128659, -0.015347767, -0.017047152, -0.020492451, 0.016104724, -0.024772916, 0.008546371, 0.02325347, 0.1120762, -0.01695084)
 
+[node name="VideoPlayer3d" parent="." instance=ExtResource("6_d1med")]
+transform = Transform3D(0.5091616, 0, -0.8606709, 0, 1, 0, 0.8606709, 0, 0.5091616, 3.1722653, 0.54999995, -3.2318592)
+CanvasLayerToUse = ExtResource("7_rxnym")
+
+[node name="Viewport2Din3D" parent="VideoPlayer3d" index="0"]
+transform = Transform3D(1.0000001, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1.0000001, 0, 1.6294916, 0)
+screen_size = Vector2(1.8, 3.2)
+viewport_size = Vector2(1080, 1920)
+
 [editable path="PotatoSeedGrowing"]
 [editable path="PotatoSeedGrowing/Potatoe_WORK_CURSE_YOU_DAMN"]
+[editable path="VideoPlayer3d"]

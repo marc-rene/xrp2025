@@ -26,5 +26,13 @@ func _ready() -> void:
         tween.tween_property(spud, "scale", Vector3.ONE, 0.15)
         print("Spud should be fully spawned by now")
         
+        
+var do_once = true
 func _physics_process(delta: float) -> void:
-    pass
+    if $PotatoSeedGrowing/Label3D.text == "TAYTO FOR EVERYONE" and do_once:
+        do_once = false
+        print("Playing potato awesomeness video")
+        $VideoPlayer3d._play_the_video_()
+
+
+        
