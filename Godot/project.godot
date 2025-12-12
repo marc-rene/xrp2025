@@ -35,6 +35,10 @@ project/assembly_name="XRP500"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[godot_xr_tools]
+
+player/standard_height=1.75
+
 [input]
 
 ui_up={
