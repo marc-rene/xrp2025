@@ -60,5 +60,6 @@ func _physics_process(delta):
 		var contact_pos = blade_area.global_transform.origin
 		print("DIG:", contact_pos)
 		emit_signal("plough_dig", contact_pos)
+		$AudioStreamPlayer3D.play()
 
 	last_pos = blade_area.global_transform.origin

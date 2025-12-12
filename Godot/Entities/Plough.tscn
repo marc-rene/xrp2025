@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bai3ak1iengvu"]
+[gd_scene load_steps=8 format=3 uid="uid://bai3ak1iengvu"]
 
 [ext_resource type="PackedScene" uid="uid://3tga7go8n3ng" path="res://Art/Hoe.glb" id="1_abjrp"]
 [ext_resource type="Script" uid="uid://uhdu3430iaow" path="res://Entities/plough.gd" id="1_ccw4n"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="2_q0vnk"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_4vx3m"]
+[ext_resource type="AudioStream" uid="uid://c55afx3hl4y85" path="res://Audio/dry-dirt-crumble-impact-351843.mp3" id="5_4vx3m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ccw4n"]
 size = Vector3(0.3, 0.1, 0.2)
@@ -29,4 +30,8 @@ shape = SubResource("BoxShape3D_uex86")
 [node name="Hoe" parent="PickableObject" instance=ExtResource("1_abjrp")]
 
 [node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("4_4vx3m")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.01894474, 0.057250977, 0.10601807)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.019, -0.34, 0.106)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55596924, 0.14758301)
+stream = ExtResource("5_4vx3m")
